@@ -1,0 +1,39 @@
+.navbar {
+    display: flex; /* Horizontal layout */
+}
+
+.navbar ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Horizontal layout */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.navbar li {
+    margin: 0 20px; /* Space between items */
+}
+
+.navbar a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Link color */
+    font-size: 18px; /* Font size */
+    padding: 10px 15px; /* Padding around links */
+    border-radius: 5px; /* Rounded corners for hover effect */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+    color: #ffcc00; /* Change color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column; /* Stack nav items */
+        width: 100%; /* Full width for mobile view */
+    }
+    .navbar li {
+        margin: 10px 0; /* Space between items in column */
+    }
+}
