@@ -1,0 +1,59 @@
+
+:root {
+    /* Color Variables */
+    --primary-color: #3498db;       /* Blue */
+    --secondary-color: #2ecc71;     /* Green */
+    --accent-color: #e74c3c;        /* Red */
+    --background-color: #f4f4f4;    /* Light Gray */
+    --text-color: #333333;          /* Dark Gray */
+    --light-text-color: #ffffff;    /* White */
+    
+    /* Font Variables */
+    --font-family: 'Arial', sans-serif;
+    --heading-font-family: 'Georgia', serif;
+  
+    /* Spacing Variables */
+    --small-spacing: 8px;
+    --medium-spacing: 16px;
+    --large-spacing: 32px;
+  
+    /* Border Radius */
+    --border-radius: 4px;
+  
+    /* Box Shadow */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Usage Example */
+  body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    padding: var(--medium-spacing);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+  }
+  
+  h1 {
+    font-family: var(--heading-font-family);
+    color: var(--primary-color);
+  }
+  
+  button {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: var(--medium-spacing);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: var(--secondary-color);
+  }
+  
