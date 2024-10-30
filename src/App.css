@@ -1,59 +1,101 @@
+@import "~react-responsive-carousel/lib/styles/carousel.min.css";
 
+/* Define color variables */
 :root {
-    /* Color Variables */
-    --primary-color: #3498db;       /* Blue */
-    --secondary-color: #2ecc71;     /* Green */
-    --accent-color: #e74c3c;        /* Red */
-    --background-color: #f4f4f4;    /* Light Gray */
-    --text-color: #333333;          /* Dark Gray */
-    --light-text-color: #ffffff;    /* White */
-    
-    /* Font Variables */
-    --font-family: 'Arial', sans-serif;
-    --heading-font-family: 'Georgia', serif;
-  
-    /* Spacing Variables */
-    --small-spacing: 8px;
-    --medium-spacing: 16px;
-    --large-spacing: 32px;
-  
-    /* Border Radius */
-    --border-radius: 4px;
-  
-    /* Box Shadow */
-    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Usage Example */
-  body {
-    font-family: var(--font-family);
-    background-color: var(--background-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    padding: var(--medium-spacing);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-  }
-  
-  h1 {
-    font-family: var(--heading-font-family);
-    color: var(--primary-color);
-  }
-  
-  button {
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    padding: var(--medium-spacing);
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: var(--secondary-color);
-  }
-  
+  --primary-color: #2f5d50;
+  --secondary-color: #5ba4a4;
+  --background-color: #f1e8db;
+  --text-color: #3b2e2e;
+  --accent-color: #d97904;
+  --light-gray: #e6e6e6;
+
+  /* Typography */
+  --font-primary: "Outfit", sans-serif;
+  --font-size-base: 16px;
+  --font-size-h1: 40px;
+  --font-size-h2: 32px;
+  --font-size-h3: 24px;
+  --font-size-small: 14px;
+}
+
+/* Global reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove bullets and padding from lists */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* Base body styles */
+body {
+  font-family: var(--font-primary);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+/* Headings */
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Button styles */
+.button-primary {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: #b56602; /* Darker shade of accent color */
+}
+
+/* Link styles */
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* Additional reusable classes */
+.text-center {
+  text-align: center;
+}
+
+.bg-light-gray {
+  background-color: var(--light-gray);
+  padding: 20px;
+  border-radius: 8px;
+}

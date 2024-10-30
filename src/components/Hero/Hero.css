@@ -1,0 +1,55 @@
+.hero-section {
+  position: relative;
+  height: 80vh;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Carousel Image Styling */
+.carousel .slide img {
+  height: 80vh;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Overlay Text */
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-overlay p {
+  font-size: 1.25rem;
+}
+
+/* Custom arrow styling */
+.carousel .control-prev.control-arrow,
+.carousel .control-next.control-arrow {
+  background: rgba(0, 0, 0, 0.3); /* Slightly transparent black */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel .control-prev.control-arrow:hover,
+.carousel .control-next.control-arrow:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel .control-prev.control-arrow:before,
+.carousel .control-next.control-arrow:before {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
