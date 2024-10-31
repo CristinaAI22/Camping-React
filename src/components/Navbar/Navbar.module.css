@@ -1,19 +1,51 @@
 .navbar {
   display: flex;
-  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--background-color); 
+  position: relative;
+  z-index: 1000; 
 }
 
+.logo {
+  flex: 0 1 auto; 
+}
+
+.logoImage {
+  max-width: 80px; 
+  height: auto; 
+}
+
+.navLinks {
+  display: none; 
+  flex-direction: column; 
+  position: absolute; 
+  top: 60px; 
+  right: 0;
+  background-color: var(--background-color);
+  width: 200px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  opacity: 0; 
+  transform: translateY(-10px); 
+  pointer-events: none; 
+}
+
+.navLinks.active {
+  display: flex; 
+  opacity: 1; 
+  transform: translateY(0); 
+  pointer-events: auto; 
+}
 .navLink {
+  padding: 15px; 
+  cursor: pointer; 
   color: var(--secondary-color);
-  font-size: 1rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 600;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-  border-bottom: 2px solid transparent;
+  text-decoration: none; 
+  transition: background-color 0.3s; 
 }
 
 .navLink:hover {
-  color: #cfe2b3; /* Lighter green on hover */
-  border-bottom: 2px solid #cfe2b3; /* Underline effect on hover */
+ color: var(--accent-color);
 }
