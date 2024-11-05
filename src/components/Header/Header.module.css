@@ -12,14 +12,14 @@
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-
-.headerTitle { 
-  color: var(--secondary-color);
+.logoWrapper {
+  flex: 0 1 auto; /* Prevents the logo from growing too large */
 }
 
-.logo {
-  width: 10%; 
-  max-width: 100px; 
-  height: auto; 
-  margin-right: 1rem; }
-
+.logoImage {
+  max-width: 80px; /* Set maximum width for the logo */
+  height: auto; /* Maintain aspect ratio */
+}
+.headerTitle {
+  color: var(--secondary-color);
+}
