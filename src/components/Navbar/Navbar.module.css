@@ -4,9 +4,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #f0f0f0; /* You can replace with your theme */
+  background-color: #f0f0f0; /* Navbar background */
 }
 
+/* For the logo (optional) */
 .logo {
   flex: 0 1 auto;
 }
@@ -16,70 +17,83 @@
   height: auto;
 }
 
-/* This rule hides the nav links by default */
+/* Desktop Navigation Links */
 .navLinks {
-  display: flex; /* For large screens, the nav links are in a row */
+  display: flex; /* Show links inline horizontally on desktop */
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Mobile menu styling: By default, we hide the mobile menu */
-.navLinks {
-  display: none;
-  flex-direction: column; /* Stacks the links vertically on mobile */
-  position: absolute; /* Positioned below the navbar */
-  top: 60px;
-  right: 0;
-  background-color: #fff; /* Background color of mobile menu */
-  width: 200px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  pointer-events: none; /* Prevent interaction when hidden */
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* When the menu is active (opened), we make it visible */
-.navLinks.active {
-  display: flex; /* Display the links */
-  opacity: 1; /* Make it fully visible */
-  pointer-events: auto; /* Allow interactions */
-  transform: translateY(0); /* Slide it into view */
-}
-
-/* Style the nav links (items like Home, About, etc.) */
 .navLink {
   padding: 15px;
   cursor: pointer;
-  color: #333; /* Text color */
+  color: #333;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .navLink:hover {
   background-color: #f0f0f0;
-  color: #0073e6; /* Change on hover */
+  color: #0073e6;
 }
 
-/* Hamburger menu icon styling */
+/* Mobile: Initially hide the nav links */
+.navLinks {
+  display: none; /* Links are hidden by default on mobile */
+  flex-direction: column; /* Stack links vertically */
+  position: absolute;
+  top: 60px; /* Position below navbar */
+  right: 0;
+  background-color: #fff;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none; /* Disable interactions when hidden */
+  transform: translateY(-100%); /* Initially hide off-screen */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* When the menu is active, show the links */
+.navLinks.active {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0); /* Slide menu into view */
+}
+
+/* Hamburger icon - initially hidden on desktop */
 .hamburgerIcon {
-  display: none; /* Hide the hamburger menu icon by default */
+  display: none;
 }
 
-/* Mobile media query */
+/* Mobile: Show the hamburger icon, hide nav links */
 @media (max-width: 768px) {
-  /* Show hamburger icon only on mobile screens */
+  /* Show hamburger icon on mobile */
   .hamburgerIcon {
     display: block;
   }
 
-  /* The regular nav links are hidden on mobile */
+  /* Hide the nav links on mobile unless active */
   .navLinks {
     display: none;
   }
 
-  /* When the menu is active, show the mobile links */
+  /* When the menu is active, show the nav links */
   .navLinks.active {
+    display: flex;
+  }
+}
+
+/* Desktop: Hide hamburger icon and show nav links */
+@media (min-width: 769px) {
+  /* Hide hamburger icon on desktop */
+  .hamburgerIcon {
+    display: none;
+  }
+
+  /* Show nav links inline horizontally on desktop */
+  .navLinks {
     display: flex;
   }
 }

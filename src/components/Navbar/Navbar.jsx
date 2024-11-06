@@ -10,11 +10,7 @@ const Navbar = () => {
 
   // Toggle the menu visibility
   const toggleMenu = () => {
-    setIsMenuOpen((prevState) => {
-      const newState = !prevState; // Toggle the current state
-      console.log('Toggling Menu: Previous State:', prevState, 'New State:', newState); // Debugging: log state before and after toggle
-      return newState;
-    });
+    setIsMenuOpen((prevState) => !prevState);
   };
 
   // Close the menu if clicked outside
@@ -26,7 +22,6 @@ const Navbar = () => {
         !menuRef.current.contains(event.target)
       ) {
         setIsMenuOpen(false); // Close the menu when clicking outside
-        console.log('Menu closed due to outside click'); // Debugging: log when the menu is closed by clicking outside
       }
     },
     [isMenuOpen] // Dependency: useEffect will be triggered when isMenuOpen changes
@@ -39,16 +34,11 @@ const Navbar = () => {
     };
   }, [handleClickOutside]); // Make sure handleClickOutside is updated when the state changes
 
-  // Log the state of isMenuOpen when it changes
-  useEffect(() => {
-    console.log('isMenuOpen has changed to:', isMenuOpen); // Debugging: log when the menu state changes
-  }, [isMenuOpen]);
-
   return (
     <nav className={styles.navbar}>
-      {/* Hamburger icon for toggling the menu */}
+      {/* Hamburger menu icon for mobile */}
       <IconButton onClick={toggleMenu} aria-label="Toggle menu" className={styles.hamburgerIcon}>
-        {isMenuOpen ? <Close /> : <Menu />} {/* Show Close icon if menu is open, else show Menu */}
+        {isMenuOpen ? <Close /> : <Menu />} {/* Show Close icon when menu is open, otherwise Menu */}
       </IconButton>
 
       {/* Navigation links */}

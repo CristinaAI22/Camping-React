@@ -1,12 +1,12 @@
 import React from "react";
 import "./Hero.css";
 import { Carousel } from "react-responsive-carousel";
-import image1 from "../../Assets/hero carusel poze/hero-1.jpg";
-import image2 from "../../Assets/hero carusel poze/hero-2.jpg";
-import image3 from "../../Assets/hero carusel poze/hero-3.jpg";
-import image4 from "../../Assets/hero carusel poze/hero-4.jpeg";
-import image5 from "../../Assets/hero carusel poze/hero-5.jpg";
-import image6 from "../../Assets/hero carusel poze/hero-6.jpg";
+import image1 from "../../Assets/HeroPhotos/hero-1.jpg";
+import image2 from "../../Assets/HeroPhotos/hero-2.jpg";
+import image3 from "../../Assets/HeroPhotos/hero-3.jpg";
+import image4 from "../../Assets/HeroPhotos/hero-4.jpeg";
+import image5 from "../../Assets/HeroPhotos/hero-5.jpg";
+import image6 from "../../Assets/HeroPhotos/hero-6.jpg";
 
 export const Hero = () => {
   return (

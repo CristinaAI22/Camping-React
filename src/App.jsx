@@ -1,14 +1,14 @@
 import "./App.css";
 import Header from './components/Header/Header.jsx';
-import { Footer } from "./components/Footer/Footer";
-import { Hero } from "./components/Hero/Hero";
+import { Footer } from "./components/Footer/Footer.jsx";
+import { Hero } from "./components/Hero/Hero.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/home"; // Default import
-import About from "./pages/about"; // Default import
-import Services from "./pages/services"; // Default import
-import Contact from "./pages/contact"; // Default import
+import Home from "./pages/home.jsx"; // Default import
+import About from "./pages/about.jsx"; // Default import
+import Services from "./pages/services.jsx"; // Default import
+import Contact from "./pages/contact.jsx"; // Default import
 import Navbar from "./components/Navbar/Navbar.jsx";
-import CardActivities from "./components/CardActivities";
+import CardActivities from './components/CardActivities/CardActivities.jsx';
 
 
 function App() {
