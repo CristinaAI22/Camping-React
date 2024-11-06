@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ActivitiesCard() {
+function CardActivities() {
     <div className='card'>
         <img></img>
         <h2>Plimbari cu bicicletele</h2>
@@ -8,4 +8,4 @@ function ActivitiesCard() {
     </div>
 }
 
-export default ActivitiesCard;
+export default <CardActivities></CardActivities>;
