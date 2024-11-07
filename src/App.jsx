@@ -8,7 +8,7 @@ import About from "./pages/about.jsx"; // Default import
 import Services from "./pages/services.jsx"; // Default import
 import Contact from "./pages/contact.jsx"; // Default import
 import Navbar from "./components/Navbar/Navbar.jsx";
-import CardActivities from './components/CardActivities.jsx';
+import CardActivities from './components/CardComponent/CardActivities.jsx';
 
 
 function App() {

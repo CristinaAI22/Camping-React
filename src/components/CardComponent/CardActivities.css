@@ -1,0 +1,99 @@
+/* CardActivities.css */
+
+/* Card container styles */
+.card-root {
+    max-width: 345px;
+    margin: 20px;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow for the card */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+    background-color: #fff; /* White background for cards */
+  }
+  
+  /* Hover effect for the card */
+  .card-root:hover {
+    transform: translateY(-8px); /* Elevate the card slightly */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Larger shadow */
+  }
+  
+  /* Card image styles */
+  .card-media {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    object-fit: cover;
+    height: 200px;
+    transition: opacity 0.3s ease; /* Smooth opacity transition */
+  }
+  
+  .card-root:hover .card-media {
+    opacity: 0.85; /* Slight opacity change on hover for the image */
+  }
+  
+  /* Card content area */
+  .card-content {
+    padding: 20px;
+    text-align: center; /* Center align content */
+  }
+  
+  /* Card title */
+  .card-title {
+    font-size: var(--font-size-h3);
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 12px; /* Space below title */
+  }
+  
+  /* Card description */
+  .card-description {
+    font-size: var(--font-size-small);
+    color: var(--text-color);
+    margin-bottom: 20px; /* Add space between description and button */
+    line-height: 1.5;
+  }
+  
+  /* Card action button */
+  .card-action-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px; /* More padding for a better button size */
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: none;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow to the button */
+  }
+  
+  /* Button hover effect */
+  .card-action-button:hover {
+    background-color: var(--primary-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow effect on hover */
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 600px) {
+    .card-root {
+      width: 100%;
+    }
+    .card-title {
+      font-size: var(--font-size-h2); /* Slightly smaller title on mobile */
+    }
+    .card-description {
+      font-size: var(--font-size-small); /* Keep description size small */
+    }
+    .card-action-button {
+      padding: 8px 16px; /* Smaller button on mobile */
+    }
+  }
+  
+  /* Grid Layout for Cards */
+  .MuiGrid-container {
+    padding: 0 10px;
+  }
+  
+  .MuiGrid-item {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
