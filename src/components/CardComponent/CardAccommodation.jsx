@@ -1,66 +1,34 @@
-// src/components/CardComponent/CardAccommodation.jsx
 import React from "react";
-import { Card, CardContent, CardMedia, Typography, Grid } from "@mui/material";
-import { GiCampingTent, GiHammock, GiBarbecue, GiCookingPot } from "react-icons/gi";
-import { FaCaravan, FaToilet, FaShower, FaWifi } from "react-icons/fa";
+import { Card, CardContent, CardMedia, Typography, Grid, CardActions, Button } from "@mui/material";
 
-const CardAccommodation = ({ image, title, description, amenities }) => {
+function CardAccommodation({ image, title, description, features }) {
   return (
-    <Card>
-      <CardMedia component="img" image={image} alt={title} height="140" />
-      <CardContent>
-        <Typography variant="h5" component="div">
+    <Card className="card-root">
+      <CardMedia
+        component="img"
+        height="200"
+        image={image} // Ensure this is a string path, not an object
+        alt={title}
+        className="card-media"
+      />
+      <CardContent className="card-content">
+        <Typography className="card-title" gutterBottom>
           {title}
         </Typography>
-        <Typography variant="body2" paragraph>
+        <Typography className="card-description" variant="body2" color="text.secondary">
           {description}
         </Typography>
-
-        <Grid container spacing={1}>
-          {amenities.includes("tent") && (
-            <Grid item>
-              <GiCampingTent title="Tent Area" />
-            </Grid>
-          )}
-          {amenities.includes("camper") && (
-            <Grid item>
-              <FaCaravan title="Camper Area" />
-            </Grid>
-          )}
-          {amenities.includes("toilet") && (
-            <Grid item>
-              <FaToilet title="Toilet" />
-            </Grid>
-          )}
-          {amenities.includes("shower") && (
-            <Grid item>
-              <FaShower title="Shower" />
-            </Grid>
-          )}
-          {amenities.includes("wifi") && (
-            <Grid item>
-              <FaWifi title="Wi-Fi" />
-            </Grid>
-          )}
-          {amenities.includes("grill") && (
-            <Grid item>
-              <GiBarbecue title="Grill" />
-            </Grid>
-          )}
-          {amenities.includes("kitchen") && (
-            <Grid item>
-              <GiCookingPot title="Kitchen" />
-            </Grid>
-          )}
-          {amenities.includes("hammock") && (
-            <Grid item>
-              <GiHammock title="Hammock" />
-            </Grid>
-          )}
-        </Grid>
+        <div className="card-features">
+          {/* Render features here */}
+        </div>
       </CardContent>
+      <CardActions>
+        <Button className="card-action-button" size="small">
+          Learn More
+        </Button>
+      </CardActions>
     </Card>
   );
-};
+}
 
 export default CardAccommodation;

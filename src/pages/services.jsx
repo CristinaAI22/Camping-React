@@ -12,6 +12,7 @@ import horsebackImage from "../Assets/ActivitiesPhotos/horsebackriding.jpg";
 import festivalImage from "../Assets/ActivitiesPhotos/festival.jpg";
 import monasteryImage from "../Assets/ActivitiesPhotos/monasteries.jpg";
 import waterImage from "../Assets/ActivitiesPhotos/thermals.jpg";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   // Array of card data
@@ -30,17 +31,20 @@ const Services = () => {
     {
       image: landscapeImage,
       title: "Descoperă natura încântătoare",
-      description: "Oferim ghidaj și îndrumare curioșilor și dornicilor de aventură.",
+      description:
+        "Oferim ghidaj și îndrumare curioșilor și dornicilor de aventură.",
     },
     {
       image: kayakImage,
       title: "Plimbări cu caiacul",
-      description: "Cunoaștem locurile și te putem lua alături de noi, să descoperim din caiac frumosul lac Brădișor.",
+      description:
+        "Cunoaștem locurile și te putem lua alături de noi, să descoperim din caiac frumosul lac Brădișor.",
     },
     {
       image: horsebackImage,
       title: "Echitație în natură",
-      description: "Nedeea Vâlceană organizează excursii cu caii prin pădurile, dealurile și munții din zona Văii Călineștiului.",
+      description:
+        "Nedeea Vâlceană organizează excursii cu caii prin pădurile, dealurile și munții din zona Văii Călineștiului.",
     },
     {
       image: festivalImage,
@@ -57,7 +61,8 @@ const Services = () => {
     {
       image: waterImage,
       title: "Băile termale de la Călimănești-Căciulata",
-      description: "Bogăția pământului, apele termale de la Călimănești-Căciulata sunt aproape de noi.",
+      description:
+        "Bogăția pământului, apele termale de la Călimănești-Căciulata sunt aproape de noi.",
     },
   ];
 
@@ -80,6 +85,12 @@ const Services = () => {
       </Typography>
       {/* Use the CardList component to render the cards */}
       <CardList cards={cardData} />
+      {/* Link to Accommodation page */}
+      <div style={{ marginTop: "20px", textAlign: "center" }}>
+        <Link to="/accommodation">
+          <button>View Accommodation Options</button>
+        </Link>
+      </div>
     </div>
   );
 };
