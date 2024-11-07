@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, CardMedia, Typography, CardActions, Button } from "@mui/material";
-import "../../App.css"; // Import the global styles
+import "../App.css";  // Correct import for App.css from the components folder
 
 function CardActivities({ image, title, description }) {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import CardActivities from "../components/CardActivities/CardActivities";
+import CardActivities from "../components/CardActivities";
 import { Grid2, Typography } from "@mui/material";
 import bicycleImage from "../Assets/ActivitiesPhotos/bicycles.jpg";
 import foodImage from "../Assets/ActivitiesPhotos/food.jpg";
