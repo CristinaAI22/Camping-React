@@ -1,25 +1,29 @@
 import React from "react";
 import { Card, CardContent, CardMedia, Typography, CardActions, Button } from "@mui/material";
+import "../../App.css"; // Import the global styles
 
 function CardActivities({ image, title, description }) {
   return (
-    <Card sx={{ maxWidth: 345, marginBottom: 2 }}>
+    <Card className="card-root">
       <CardMedia
         component="img"
         height="200"
-        image={image}  // Use the image passed as a prop
-        alt={title}    // Use the title for alt text
+        image={image}
+        alt={title}
+        className="card-media" // Apply class for rounded corners
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {title}  {/* Display the title passed in as a prop */}
+      <CardContent className="card-content">
+        <Typography className="card-title" gutterBottom>
+          {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {description}  {/* Display the description passed in as a prop */}
+        <Typography className="card-description" variant="body2" color="text.secondary">
+          {description}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button className="card-action-button" size="small">
+          Learn More
+        </Button>
       </CardActions>
     </Card>
   );

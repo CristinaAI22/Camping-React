@@ -13,7 +13,7 @@ const Header = () => {
       </div>
 
       <h1 className={styles.headerTitle}>
-        Bine ai venit la Camping "Gradina cu flori"
+        Bine ai venit la Camping "Grădina cu flori"
       </h1>
 
       <Navbar />
