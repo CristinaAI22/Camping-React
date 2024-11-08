@@ -1,9 +1,10 @@
 import React from "react";
+import Map from "../components/Map/Map";
 
 const Contact = () => {
   return (
     <>
-      <h2>Contact</h2>
+      <Map />
     </>
   );
 };

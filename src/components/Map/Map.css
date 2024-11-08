@@ -1,0 +1,16 @@
+.map-container {
+  width: 50%; /* Set width to 50% */
+  height: 400px; /* Set fixed height */
+  border: 2px solid #ccc; /* Nice border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Padding inside the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  margin: 20px auto; /* Center the container */
+  background-color: #fff; /* Background color for the container */
+}
+
+.map-container iframe {
+  width: 100%; /* Make iframe take full width */
+  height: 100%; /* Make iframe take full height */
+  border: none; /* Remove border from iframe */
+}
