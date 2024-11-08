@@ -1,8 +1,9 @@
-// src/components/Header/Header.js
 import React from "react";
 import styles from "./Header.module.css";
 import Navbar from "../Navbar/Navbar";
 import "../../App.css";
+
+
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
       </div>
 
       <h1 className={styles.headerTitle}>
-        Bine ai venit la Camping "Gradina cu flori"
+        Bine ai venit la Camping "Grădina cu flori"
       </h1>
 
       <Navbar />

@@ -46,18 +46,22 @@ h1 {
   font-size: var(--font-size-h1);
   font-weight: bold;
   color: var(--primary-color);
+  text-align: center;
+  margin-top: 40px;
 }
 
 h2 {
   font-size: var(--font-size-h2);
   font-weight: 600;
   color: var(--secondary-color);
+  text-align: center;
 }
 
 h3 {
   font-size: var(--font-size-h3);
   font-weight: 500;
   color: var(--text-color);
+  text-align: center;
 }
 
 /* Button styles */
@@ -96,4 +100,76 @@ a:hover {
   background-color: var(--light-gray);
   padding: 20px;
   border-radius: 8px;
+}
+
+/* Card Layout Styles */
+.card-title {
+  font-size: var(--font-size-h2);
+  font-family: var(--font-primary);
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.card-description {
+  font-size: var(--font-size-small);
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  margin-top: 16px;
+}
+
+.card-root {
+  max-width: 345px;
+  margin-bottom: 20px;
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-root:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-media {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-action-button {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-transform: none;
+  font-weight: bold;
+}
+
+.card-action-button:hover {
+  background-color: var(--primary-color);
+}
+
+/* Grid Layout */
+.MuiGrid-container {
+  padding: 0 20px;
+}
+
+.MuiGrid-item {
+  display: flex;
+  justify-content: center;
+}
+
+/* Card Responsiveness */
+@media (max-width: 600px) {
+  .card-root {
+    width: 100%;
+  }
+  .card-title {
+    font-size: var(--font-size-h3);
+  }
+  .card-description {
+    font-size: var(--font-size-small);
+  }
 }

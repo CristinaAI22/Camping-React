@@ -5,13 +5,15 @@ import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Track menu open/close state
   const menuRef = useRef(null);
 
+  // Toggle the menu visibility
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
 
+  // Close the menu if clicked outside
   const handleClickOutside = useCallback(
     (event) => {
       if (
@@ -19,28 +21,30 @@ const Navbar = () => {
         menuRef.current &&
         !menuRef.current.contains(event.target)
       ) {
-        setIsMenuOpen(false);
+        setIsMenuOpen(false); // Close the menu when clicking outside
       }
     },
-    [isMenuOpen]
-  ); // Add isMenuOpen as a dependency
+    [isMenuOpen] // Dependency: useEffect will be triggered when isMenuOpen changes
+  );
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-
+    document.addEventListener("mousedown", handleClickOutside); // Add event listener for clicks outside the menu
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside); // Cleanup event listener on component unmount
     };
-  }, [handleClickOutside]); // Add handleClickOutside to the dependency array
+  }, [handleClickOutside]); // Make sure handleClickOutside is updated when the state changes
 
   return (
     <nav className={styles.navbar}>
-      <IconButton onClick={toggleMenu} aria-label="Toggle menu">
-        {isMenuOpen ? <Close /> : <Menu />}
+      {/* Hamburger menu icon for mobile */}
+      <IconButton onClick={toggleMenu} aria-label="Toggle menu" className={styles.hamburgerIcon}>
+        {isMenuOpen ? <Close /> : <Menu />} {/* Show Close icon when menu is open, otherwise Menu */}
       </IconButton>
+
+      {/* Navigation links */}
       <ul
         ref={menuRef}
-        className={`${styles.navLinks} ${isMenuOpen ? styles.active : ""}`}
+        className={`${styles.navLinks} ${isMenuOpen ? styles.active : ""}`} // Add 'active' class when menu is open
       >
         <li className={styles.navLink}>
           <Link to="/">Home</Link>

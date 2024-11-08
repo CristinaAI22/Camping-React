@@ -1,51 +1,99 @@
+/* Basic Navbar styling */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: var(--background-color); 
-  position: relative;
-  z-index: 1000; 
+  background-color: #f0f0f0; /* Navbar background */
 }
 
+/* For the logo (optional) */
 .logo {
-  flex: 0 1 auto; 
+  flex: 0 1 auto;
 }
 
 .logoImage {
-  max-width: 80px; 
-  height: auto; 
+  max-width: 80px;
+  height: auto;
 }
 
+/* Desktop Navigation Links */
 .navLinks {
-  display: none; 
-  flex-direction: column; 
-  position: absolute; 
-  top: 60px; 
-  right: 0;
-  background-color: var(--background-color);
-  width: 200px; 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
-  transition: opacity 0.3s ease, transform 0.3s ease; 
-  opacity: 0; 
-  transform: translateY(-10px); 
-  pointer-events: none; 
+  display: flex; /* Show links inline horizontally on desktop */
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.navLinks.active {
-  display: flex; 
-  opacity: 1; 
-  transform: translateY(0); 
-  pointer-events: auto; 
-}
 .navLink {
-  padding: 15px; 
-  cursor: pointer; 
-  color: var(--secondary-color);
-  text-decoration: none; 
-  transition: background-color 0.3s; 
+  padding: 15px;
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 .navLink:hover {
- color: var(--accent-color);
+  background-color: #f0f0f0;
+  color: #0073e6;
+}
+
+/* Mobile: Initially hide the nav links */
+.navLinks {
+  display: none; /* Links are hidden by default on mobile */
+  flex-direction: column; /* Stack links vertically */
+  position: absolute;
+  top: 60px; /* Position below navbar */
+  right: 0;
+  background-color: #fff;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none; /* Disable interactions when hidden */
+  transform: translateY(-100%); /* Initially hide off-screen */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* When the menu is active, show the links */
+.navLinks.active {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0); /* Slide menu into view */
+}
+
+/* Hamburger icon - initially hidden on desktop */
+.hamburgerIcon {
+  display: none;
+}
+
+/* Mobile: Show the hamburger icon, hide nav links */
+@media (max-width: 768px) {
+  /* Show hamburger icon on mobile */
+  .hamburgerIcon {
+    display: block;
+  }
+
+  /* Hide the nav links on mobile unless active */
+  .navLinks {
+    display: none;
+  }
+
+  /* When the menu is active, show the nav links */
+  .navLinks.active {
+    display: flex;
+  }
+}
+
+/* Desktop: Hide hamburger icon and show nav links */
+@media (min-width: 769px) {
+  /* Hide hamburger icon on desktop */
+  .hamburgerIcon {
+    display: none;
+  }
+
+  /* Show nav links inline horizontally on desktop */
+  .navLinks {
+    display: flex;
+  }
 }
