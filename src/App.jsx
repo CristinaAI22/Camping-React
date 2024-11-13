@@ -4,13 +4,10 @@ import { Footer } from "./components/Footer/Footer.jsx";
 import { Hero } from "./components/Hero/Hero.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home.jsx"; 
-import About from "./pages/about.jsx"; 
 import Services from "./pages/services.jsx"; 
 import Contact from "./pages/contact.jsx"; 
 import Accommodation from "./pages/accommodation.jsx";
-import Navbar from "./components/Navbar/Navbar.jsx";
-import CardActivities from './components/CardComponent/CardActivities.jsx';
-
+import Navbar from "./components/Navbar/Navbar.jsx";  // Navbar is included here, no need to include it again
 
 function App() {
   return (
@@ -18,15 +15,16 @@ function App() {
       <div className="App">
         <Header />
         <Hero />
+     
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/accommodation" element={<Accommodation />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<h2>404 Not Found</h2>} />
+          <Route path="/" element={<Home />} /> {/* Home route */}
+          <Route path="/accommodation" element={<Accommodation />} /> {/* Accommodation route */}
+          <Route path="/services" element={<Services />} /> {/* Services route */}
+          <Route path="/contact" element={<Contact />} /> {/* Contact route */}
+          <Route path="*" element={<h2>404 Not Found</h2>} /> {/* Catch-all 404 route */}
         </Routes>
-        <Footer />
+
+        <Footer />  {/* Footer stays at the bottom */}
       </div>
     </BrowserRouter>
   );
