@@ -3,14 +3,12 @@ import styles from "./Header.module.css";
 import Navbar from "../Navbar/Navbar";
 import "../../App.css";
 
-
+import { ReactComponent as Logo } from "../../Assets/svg/Logo CGF.svg";
 
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.logoWrapper}>
-        <img src="/logo.png" alt="Camping Logo" className={styles.logoImage} />
-      </div>
+      <Logo className="logo" width={150} height={150} />
 
       <h1 className={styles.headerTitle}>
         Bine ai venit la Camping "Grădina cu flori"
