@@ -1,79 +1,69 @@
-/* Navbar.module.css */
-
-/* Navbar container styles */
+/* Basic Navbar styling */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: var(--background-color);
+  background-color: var(--primary-color);
+  color: white;
 }
 
-/* Hamburger icon */
+/* Mobile Hamburger Icon */
 .hamburgerIcon {
-  display: none; /* Hide by default */
+  display: none; /* Hidden on larger screens */
 }
 
-/* Navigation Links */
+/* Nav Links - Desktop view (inline) */
 .navLinks {
   display: flex;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  transition: opacity 0.3s ease;
 }
 
-.navLinks li {
-  margin-right: 1rem; /* Space between items */
+/* Nav Link Items */
+.navLink {
+  margin: 0 1rem;
+  color: var(--text-color);
 }
 
-.navLinks a {
-  color: var(--text-color); /* Default text color */
-  text-decoration: none; /* Remove underline */
+.navLink a {
+  text-decoration: none;
+  color: var(--secondary-color);
   font-weight: bold;
-  font-size: var(--font-size-base);
-  transition: color 0.3s ease; /* Smooth color transition */
+  transition: color 0.3s ease;
 }
 
-.navLinks a:hover {
-  color: var(--accent-color); /* Accent color on hover */
-  text-decoration: underline; /* Underline on hover */
+.navLink a:hover {
+  color: var(--accent-color);
 }
 
-/* When the menu is open (mobile view) */
-.navLinks.active {
-  display: block;
-  position: absolute;
-  top: 60px;
-  right: 0;
-  background-color: var(--background-color);
-  width: 200px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  padding: 1rem;
-  opacity: 1;
-}
-
-.navLinks a:hover {
-  color: var(--primary-color); /* Primary color on hover in mobile view */
-  text-decoration: none; /* Remove underline on hover in mobile */
-}
-
-/* Mobile view */
+/* Mobile Styles */
 @media (max-width: 768px) {
   .hamburgerIcon {
-    display: block; /* Show hamburger icon on mobile */
-  }
-
-  .navLinks {
-    display: none; /* Hide links by default on mobile */
-    flex-direction: column;
-    align-items: center; /* Center links in mobile */
-  }
-
-  .navLinks.active {
     display: block;
   }
 
-  .navLinks li {
-    margin: 1rem 0; /* Vertical space between items on mobile */
+  .navLinks {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: var(--primary-color);
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-100%);
+  }
+
+  /* Show menu when active */
+  .navLinks.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 }
