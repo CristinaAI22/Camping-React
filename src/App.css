@@ -173,3 +173,6 @@ a:hover {
     font-size: var(--font-size-small);
   }
 }
+.logo {
+  color: var(--accent-color);
+}
