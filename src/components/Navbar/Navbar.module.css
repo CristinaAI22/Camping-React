@@ -4,16 +4,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: var(--primary-color);
+  background-color: transparent;
   color: white;
 }
 
-/* Mobile Hamburger Icon */
-.hamburgerIcon {
-  display: none; /* Hidden on larger screens */
+/* Hide hamburger icon by default (desktop) */
+.navbar .hamburgerIcon {
+  display: none !important;  /* Use !important to force it */
 }
 
-/* Nav Links - Desktop view (inline) */
+/* Links styling */
 .navLinks {
   display: flex;
   list-style: none;
@@ -22,10 +22,8 @@
   transition: opacity 0.3s ease;
 }
 
-/* Nav Link Items */
 .navLink {
   margin: 0 1rem;
-  color: var(--text-color);
 }
 
 .navLink a {
@@ -37,16 +35,24 @@
 
 .navLink a:hover {
   color: var(--accent-color);
+  background-color: var(--light-gray); /* Subtle background on hover */
+  border-radius: 4px;
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-  .hamburgerIcon {
-    display: block;
+  /* Show the hamburger icon only on mobile */
+  .navbar .hamburgerIcon {
+    display: block !important; /* Ensure visibility on mobile */
+  }
+
+  /* Change navbar background color when hamburger menu is active */
+  .navbar {
+    background-color: var(--accent-color);
   }
 
   .navLinks {
-    display: none; /* Hidden by default on mobile */
+    display: none; /* Hide menu by default on mobile */
     flex-direction: column;
     position: absolute;
     top: 60px;
@@ -59,11 +65,10 @@
     transform: translateY(-100%);
   }
 
-  /* Show menu when active */
   .navLinks.active {
     display: flex;
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
+    transform: translateY(0); /* Slide down when active */
   }
 }
