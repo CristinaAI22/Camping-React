@@ -155,6 +155,13 @@ const Accommodation = () => {
           className= "button-primary"
         />
       </div>
+      <div style={{ textAlign: "center", marginTop: "30px" }}>
+        <NavigationButton
+          to="/contact"
+          label="Contactați-ne"
+          className="button-primary"
+        />
+      </div>
     </div>
   );
 };

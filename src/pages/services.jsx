@@ -82,14 +82,21 @@ const Services = () => {
       </Typography>
       {/* Use the CardList component to render the cards */}
       <CardList cards={cardData} />
-     
-     <div style={{ textAlign: "center", marginTop: "30px" }}>
-      <NavigationButton
-      to="/accommodation"
-      label="Detalii despre cazare"
-      className="button-primary"
-      />
-     </div>
+
+      <div style={{ textAlign: "center", marginTop: "30px" }}>
+        <NavigationButton
+          to="/accommodation"
+          label="Detalii despre cazare"
+          className="button-primary"
+        />
+      </div>
+      <div style={{ textAlign: "center", marginTop: "30px" }}>
+        <NavigationButton
+          to="/contact"
+          label="Contactați-ne"
+          className="button-primary"
+        />
+      </div>
     </div>
   );
 };
