@@ -1,0 +1,37 @@
+/* NavigationButton.css */
+.button-primary {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 24px; /* Increase padding for better size */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px; /* Set the font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.3); /* Soft shadow */
+    outline: none;
+    text-transform: uppercase; /* Uppercase text */
+  }
+  
+  /* Hover Effect */
+  .button-primary:hover {
+    background-color: var(--primary-color); /* Change to primary color on hover */
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2), -4px -4px 15px rgba(255, 255, 255, 0.4); /* Stronger shadow on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+  }
+  
+  /* Focus Effect */
+  .button-primary:focus {
+    outline: none;
+    border: 2px solid var(--accent-color); /* Border for focus state */
+  }
+  
+  /* Disabled Button */
+  .button-primary:disabled {
+    background-color: var(--light-gray); /* Lighter gray for disabled */
+    color: #b0b0b0; /* Muted text color */
+    cursor: not-allowed; /* Disable cursor */
+    box-shadow: none; /* Remove shadow */
+  }
+  

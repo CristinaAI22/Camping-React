@@ -1,9 +1,7 @@
-// src/pages/Services.jsx
 import React from "react";
 import { Typography } from "@mui/material";
 import CardList from "../components/CardComponent/CardList"; // Import the CardList component
 
-// Import the images
 import bicycleImage from "../Assets/ActivitiesPhotos/bicycles.jpg";
 import foodImage from "../Assets/ActivitiesPhotos/food.jpg";
 import landscapeImage from "../Assets/ActivitiesPhotos/mountainlandscape1.jpg";
@@ -12,10 +10,9 @@ import horsebackImage from "../Assets/ActivitiesPhotos/horsebackriding.jpg";
 import festivalImage from "../Assets/ActivitiesPhotos/festival.jpg";
 import monasteryImage from "../Assets/ActivitiesPhotos/monasteries.jpg";
 import waterImage from "../Assets/ActivitiesPhotos/thermals.jpg";
-import { Link } from "react-router-dom";
+import NavigationButton from "../components/NavigationButton";
 
 const Services = () => {
-  // Array of card data
   const cardData = [
     {
       image: bicycleImage,
@@ -85,12 +82,14 @@ const Services = () => {
       </Typography>
       {/* Use the CardList component to render the cards */}
       <CardList cards={cardData} />
-      {/* Link to Accommodation page */}
-      <div style={{ marginTop: "20px", textAlign: "center" }}>
-        <Link to="/accommodation">
-          <button>View Accommodation Options</button>
-        </Link>
-      </div>
+     
+     <div style={{ textAlign: "center", marginTop: "30px" }}>
+      <NavigationButton
+      to="/accommodation"
+      label="Detalii despre cazare"
+      className="button-primary"
+      />
+     </div>
     </div>
   );
 };
