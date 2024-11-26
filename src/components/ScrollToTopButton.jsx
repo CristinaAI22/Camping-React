@@ -1,18 +1,14 @@
 import React from "react";
-import "./ScrollToTopButton.css"; 
+import "./ScrollToTopButton.css"; // Make sure the CSS file is properly imported
 
-const ScrollToTopButton = ({ label, style, className }) => {
+const ScrollToTopButton = () => {
   const handleScrollToTop = () => {
-    window.scrollTo(0, 0); // This scrolls the page to the top
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <button
-      onClick={handleScrollToTop}
-      style={style}
-      className={`button-scroll-to-top ${className}`}
-    >
-      {label}
+    <button onClick={handleScrollToTop} className="scroll-to-top-button">
+      Scroll to Top
     </button>
   );
 };

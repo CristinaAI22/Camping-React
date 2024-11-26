@@ -11,7 +11,7 @@ import festivalImage from "../Assets/ActivitiesPhotos/festival.jpg";
 import monasteryImage from "../Assets/ActivitiesPhotos/monasteries.jpg";
 import waterImage from "../Assets/ActivitiesPhotos/thermals.jpg";
 import NavigationButton from "../components/NavigationButton";
-
+import ScrollToTopButton from "../components/ScrollToTopButton";
 const Services = () => {
   const cardData = [
     {
@@ -96,6 +96,9 @@ const Services = () => {
           label="Contactați-ne"
           className="button-primary"
         />
+      </div>
+      <div style={{ textAlign: "center", marginTop: "30px" }}>
+        <ScrollToTopButton />
       </div>
     </div>
   );
