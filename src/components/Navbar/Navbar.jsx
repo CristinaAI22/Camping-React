@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { IconButton } from "@mui/material";
 import { Menu, Close } from "@mui/icons-material";
-import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
@@ -14,15 +13,18 @@ const Navbar = () => {
   };
 
   // Close the menu if clicked outside
-  const handleClickOutside = useCallback((event) => {
-    if (
-      isMenuOpen &&
-      menuRef.current &&
-      !menuRef.current.contains(event.target)
-    ) {
-      setIsMenuOpen(false); // Close the menu when clicking outside
-    }
-  }, [isMenuOpen]);
+  const handleClickOutside = useCallback(
+    (event) => {
+      if (
+        isMenuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    },
+    [isMenuOpen]
+  );
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -33,27 +35,37 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      {/* Hamburger menu icon for mobile */}
-      <IconButton onClick={toggleMenu} aria-label="Toggle menu" className={styles.hamburgerIcon}>
-        {isMenuOpen ? <Close /> : <Menu />} {/* Show Close icon when menu is open, otherwise Menu */}
+      <IconButton
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+        className={styles.hamburgerIcon}
+      >
+        {isMenuOpen ? <Close /> : <Menu />}
       </IconButton>
 
-      {/* Navigation links */}
       <ul
         ref={menuRef}
         className={`${styles.navLinks} ${isMenuOpen ? styles.active : ""}`}
       >
         <li className={styles.navLink}>
-          <Link to="/">Home</Link>
+          <a href="#home" onClick={() => setIsMenuOpen(false)}>
+            Home
+          </a>
         </li>
         <li className={styles.navLink}>
-          <Link to="/accommodation">Accommodation</Link>
+          <a href="#accommodations" onClick={() => setIsMenuOpen(false)}>
+            Accommodation
+          </a>
         </li>
         <li className={styles.navLink}>
-          <Link to="/services">Services</Link>
+          <a href="#services" onClick={() => setIsMenuOpen(false)}>
+            Services
+          </a>
         </li>
         <li className={styles.navLink}>
-          <Link to="/contact">Contact</Link>
+          <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+            Contact
+          </a>
         </li>
       </ul>
     </nav>
@@ -61,4 +73,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

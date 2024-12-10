@@ -2,7 +2,7 @@ import React from "react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import "./Footer.css";
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className="footer-container">
       <p className="footer-text">Follow us on social media</p>
@@ -27,3 +27,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

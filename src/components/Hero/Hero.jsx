@@ -8,7 +8,7 @@ import image4 from "../../Assets/HeroPhotos/hero-4.jpeg";
 import image5 from "../../Assets/HeroPhotos/hero-5.jpg";
 import image6 from "../../Assets/HeroPhotos/hero-6.jpg";
 
-export const Hero = () => {
+const Hero = () => {
   return (
     <section className="hero-section">
       <Carousel
@@ -35,3 +35,4 @@ export const Hero = () => {
     </section>
   );
 };
+export default Hero;
