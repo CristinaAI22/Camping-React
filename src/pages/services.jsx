@@ -10,7 +10,6 @@ import horsebackImage from "../Assets/ActivitiesPhotos/horsebackriding.jpg";
 import festivalImage from "../Assets/ActivitiesPhotos/festival.jpg";
 import monasteryImage from "../Assets/ActivitiesPhotos/monasteries.jpg";
 import waterImage from "../Assets/ActivitiesPhotos/thermals.jpg";
-import NavigationButton from "../components/NavigationButton";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 const Services = () => {
   const cardData = [
@@ -77,26 +76,13 @@ const Services = () => {
           fontWeight: "bold",
           marginTop: 4,
         }}
+        id="activities"
       >
         Activități. Ce poți să faci la Brezoi?
       </Typography>
       {/* Use the CardList component to render the cards */}
       <CardList cards={cardData} />
 
-      <div style={{ textAlign: "center", marginTop: "30px" }}>
-        <NavigationButton
-          to="/accommodation"
-          label="Detalii despre cazare"
-          className="button-primary"
-        />
-      </div>
-      <div style={{ textAlign: "center", marginTop: "30px" }}>
-        <NavigationButton
-          to="/contact"
-          label="Contactați-ne"
-          className="button-primary"
-        />
-      </div>
       <div style={{ textAlign: "center", marginTop: "30px" }}>
         <ScrollToTopButton />
       </div>

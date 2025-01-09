@@ -2,7 +2,6 @@ import React from "react";
 import { Typography, Grid, Box } from "@mui/material";
 import Map from "../components/Map/Map";
 import Weather from "../components/Weather/Weather"; 
-// import NavigationButton from "../components/NavigationButton";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 
 const Contact = () => {

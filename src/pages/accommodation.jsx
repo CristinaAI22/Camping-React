@@ -1,7 +1,6 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import CardAccommodation from "../components/CardComponent/CardAccommodation";
-import NavigationButton from "../components/NavigationButton";
 import ScrollToTopButton from "../components/ScrollToTopButton"; // Correct import
 
 // Import images
@@ -130,6 +129,7 @@ const Accommodation = () => {
         gutterBottom
         align="center"
         sx={{ fontWeight: "bold", marginTop: 4 }}
+        id="accommodation" // Add an ID for accommodation section
       >
         Facilități
       </Typography>
@@ -147,22 +147,7 @@ const Accommodation = () => {
         ))}
       </div>
 
-      {/* Navigation Buttons */}
-      <div style={{ textAlign: "center", marginTop: "30px" }}>
-        <NavigationButton
-          to="/services"
-          label="Idei de activități"
-          className="button-primary"
-        />
-      </div>
-      <div style={{ textAlign: "center", marginTop: "30px" }}>
-        <NavigationButton
-          to="/contact"
-          label="Contactați-ne"
-          className="button-primary"
-        />
-      </div>
-
+      {/* ScrollToTopButton */}
       <div style={{ textAlign: "center", marginTop: "30px" }}>
         <ScrollToTopButton />
       </div>
