@@ -8,7 +8,9 @@ import { ReactComponent as Logo } from "../../Assets/svg/Logo CGF.svg";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <Logo className="logo" width={150} height={150} />
+      <div className={styles.logoWrapper}>
+        <Logo className="logo" width={150} height={150} />
+      </div>
 
       <h1 className={styles.headerTitle}>
         Bine ai venit la Camping "Grădina cu flori"
@@ -19,4 +21,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header;

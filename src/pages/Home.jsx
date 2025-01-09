@@ -2,7 +2,6 @@ import React from 'react';
 import Accommodation from './Accommodation'; 
 import Services from './Services';           
 import Contact from './Contact';             
-import Footer from '../components/Footer/Footer'; 
 
 const Home = () => {
   return (
@@ -23,8 +22,6 @@ const Home = () => {
         <Contact /> 
       </section>
 
-      {/* Footer */}
-      <Footer />
     </>
   );
 };
