@@ -23,7 +23,7 @@ const Home = () => {
       </section>
 
     </>
-  );
+  )
 };
 
 export default Home;
