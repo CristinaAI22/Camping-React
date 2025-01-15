@@ -9,9 +9,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App bg-white dark:bg-gray-900 dark:text-white min-h-screen">
-        <Header />
+        <Header className="bg-white dark:bg-gray-900 shadow-md z-10"></Header>
         <Hero />   
-        <div className="fixed top-4 right-4 z-50 bg-white dark:bg-gray-800 rounded-full shadow-lg">
+        <div className="fixed top-4 right-4 z-50 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg">
           <Switcher /> {/* Place switcher in the corner */}
         </div>     
         <Routes>
