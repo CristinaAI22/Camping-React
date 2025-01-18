@@ -12,6 +12,8 @@ const CardList = ({ cards }) => {
             image={card.image}
             title={card.title}
             description={card.description}
+            details={card.details}
+            contact={card.contact}
           />
         </Grid2>
       ))}

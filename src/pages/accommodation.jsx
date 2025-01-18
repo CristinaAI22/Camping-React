@@ -1,7 +1,14 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import CardAccommodation from "../components/CardComponent/CardAccommodation";
-import ScrollToTopButton from "../components/ScrollToTopButton"; // Correct import
+import ScrollToTopButton from "../components/ScrollToTopButton";
+
+// Import MUI Icons
+import ShowerIcon from "@mui/icons-material/Shower";
+import KitchenIcon from "@mui/icons-material/Kitchen";
+import WcIcon from "@mui/icons-material/Wc";
+import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
+import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 
 // Import images
 import tentImage from "../Assets/ServicesPhotos/align-tents.jpg";
@@ -20,27 +27,49 @@ const Accommodation = () => {
       image: tentImage,
       title: "Camping pentru corturi",
       description: "Enjoy the beauty of nature with our tent camping.",
-      features: ["toilet", "shower", "kitchen", "camping"],
+      features: [
+        <WcIcon key="toilet" />,
+        <ShowerIcon key="shower" />,
+        <KitchenIcon key="kitchen" />,
+        <DirectionsCarIcon key="camping" />,
+      ],
     },
     {
       image: tentsCarsImage,
       title: "Corturi pe Mașini (Tents on Cars)",
       description:
         "Perfect for adventurous campers who want to stay above ground!",
-      features: ["shower", "kitchen", "camping"],
+      features: [
+        <ShowerIcon key="shower" />,
+        <KitchenIcon key="kitchen" />,
+        <DirectionsCarIcon key="camping" />,
+        <WcIcon key="toilet"/>,
+      ],
     },
     {
       image: motorsImage,
       title: "Motociclete",
       description: "Îi găzduim cu drag pe cei care vin cu motoarele.",
-      features: ["toilet", "shower", "mirrors", "hot water"],
+      features: [
+        <WcIcon key="toilet" />,
+        <ShowerIcon key="shower" />,
+        <LocalFireDepartmentIcon key="hot water" />,
+        <KitchenIcon key="kitchen" />,
+
+      ],
     },
     {
       image: campersImage,
       title: "Rulote",
       description:
         "Avem o capacitate de a primi 10 rulote, cu acces la toate facilitățile campingului.",
-      features: ["toilet", "shower", "mirrors", "hot water"],
+      features: [
+        <WcIcon key="toilet" />,
+        <ShowerIcon key="shower" />,
+        <LocalFireDepartmentIcon key="hot water" />,
+        <KitchenIcon key="kitchen" />,
+
+      ],
     },
   ];
 
@@ -50,50 +79,43 @@ const Accommodation = () => {
       title: "Dușuri simple și curate",
       description:
         "Încălzim apa cu ajutorul panourilor solare și vă rugăm să folosiți cu grijă, să ajungă pentru toți.",
-      features: ["shower"],
+      features: [<ShowerIcon key="shower" />],
     },
     {
       image: bbqImage,
       title: "Vatră de foc și grătar",
       description:
         "Vă punem la dispoziție grătarul, tuciul, discul, puteți folosi și vatra de foc, vă rugăm însă să fiți atenți cu focul.",
-      features: ["bbq"],
+      features: [<LocalFireDepartmentIcon key="bbq" />],
     },
     {
       image: kitchenImage,
       title: "Bucătăria de vară!",
       description:
         "Bucătăria are frigidere, chiuvete, plită cu inducție/aragaz, câteva tacâmuri și vase. Folosiți-le cu încredere.",
-      features: ["kitchen"],
+      features: [<KitchenIcon key="kitchen" />],
     },
     {
       image: toiletsImage,
       title: "Toaletele",
       description: "Toalete minimaliste, curate.",
-      features: ["toilet"],
+      features: [<WcIcon key="toilet" />],
     },
     {
       image: hamakImage,
       title: "Hamace",
       description: "Relaxați-vă în campingul nostru livadă.",
-      features: ["toilet"],
+      features: [<WcIcon key="toilet" />],
     },
   ];
 
   return (
-    <div>
+    <div className="px-4 py-8 bg-gray-50 dark:bg-gray-900">
+      {/* Page Header */}
       <Typography
         variant="h3"
         component="h1"
-        gutterBottom
-        align="center"
-        sx={{
-          fontSize: "var(--font-size-h1)",
-          fontFamily: "var(--font-primary)",
-          color: "var(--primary-color)",
-          fontWeight: "bold",
-          marginTop: 4,
-        }}
+        className="text-4xl font-bold text-primary text-center mt-8 mb-4 dark:text-gray-200"
       >
         Despre acest camping!
       </Typography>
@@ -102,23 +124,23 @@ const Accommodation = () => {
       <Typography
         variant="h4"
         component="h2"
-        gutterBottom
-        align="center"
-        sx={{ fontWeight: "bold", marginTop: 2 }}
+        className="text-2xl font-semibold text-center mt-6 dark:text-gray-300"
       >
         Cazare
       </Typography>
-      <div
-        style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
+      <div className="flex flex-wrap justify-center gap-6 mt-4">
         {accommodationData.map((accommodation, index) => (
-          <CardAccommodation
+          <div
             key={index}
-            image={accommodation.image}
-            title={accommodation.title}
-            description={accommodation.description}
-            features={accommodation.features}
-          />
+            className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+          >
+            <CardAccommodation
+              image={accommodation.image}
+              title={accommodation.title}
+              description={accommodation.description}
+              features={accommodation.features}
+            />
+          </div>
         ))}
       </div>
 
@@ -126,29 +148,29 @@ const Accommodation = () => {
       <Typography
         variant="h4"
         component="h2"
-        gutterBottom
-        align="center"
-        sx={{ fontWeight: "bold", marginTop: 4 }}
-        id="accommodation" // Add an ID for accommodation section
+        className="text-2xl font-semibold text-center mt-12 dark:text-gray-300"
+        id="accommodation"
       >
         Facilități
       </Typography>
-      <div
-        style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
+      <div className="flex flex-wrap justify-center gap-6 mt-4">
         {facilitiesData.map((facility, index) => (
-          <CardAccommodation
+          <div
             key={index}
-            image={facility.image}
-            title={facility.title}
-            description={facility.description}
-            features={facility.features}
-          />
+            className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+          >
+            <CardAccommodation
+              image={facility.image}
+              title={facility.title}
+              description={facility.description}
+              features={facility.features}
+            />
+          </div>
         ))}
       </div>
 
       {/* ScrollToTopButton */}
-      <div style={{ textAlign: "center", marginTop: "30px" }}>
+      <div className="text-center mt-10">
         <ScrollToTopButton />
       </div>
     </div>
